@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nordicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d3b2e" />
+      <stop offset="100%" stop-color="#2e7d63" />
+    </linearGradient>
+    <linearGradient id="warmSage" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f5f7f4" />
+    </linearGradient>
+    <filter id="softNordicShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0d3b2e" flood-opacity="0.09" />
+    </filter>
+  </defs>
+
+  <!-- Calming Nordic Abstract Background Circles -->
+  <circle cx="260" cy="180" r="145" fill="#edf2eb" opacity="0.9" />
+  <circle cx="410" cy="85" r="50" fill="#fbf1ec" opacity="0.8" />
+  <circle cx="100" cy="240" r="40" fill="#eaf4ee" opacity="0.85" />
+
+  <!-- Main Central Health Card -->
+  <rect x="90" y="55" width="340" height="230" rx="20" fill="url(#warmSage)" stroke="#e1e8de" stroke-width="1.5" filter="url(#softNordicShadow)" />
+
+  <!-- Card Top Header Bar -->
+  <rect x="90" y="55" width="340" height="50" rx="20" fill="#ffffff" />
+  <rect x="90" y="85" width="340" height="20" fill="#ffffff" />
+  <line x1="90" y1="105" x2="430" y2="105" stroke="#edf2eb" stroke-width="1.5" />
+
+  <circle cx="120" cy="80" r="14" fill="#eaf4ee" />
+  <path d="M 120 72 L 112 76 V 83 C 112 87 116 90 120 91 C 124 90 128 87 128 83 V 76 Z" fill="#0d3b2e" />
+
+  <rect x="145" y="74" width="90" height="9" rx="4.5" fill="#0a241b" />
+  <rect x="145" y="87" width="140" height="6" rx="3" fill="#9db0a7" />
+
+  <!-- Live Pulse Metric Badge on Header -->
+  <rect x="340" y="70" width="70" height="20" rx="10" fill="#eaf4ee" stroke="#b8dcc7" stroke-width="1" />
+  <circle cx="352" cy="80" r="3" fill="#2e7d63" />
+  <text x="362" y="84" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#0d3b2e">98.42%</text>
+
+  <!-- Inner Split: Left Triage Stats, Right Sparkline -->
+  <!-- Left Side Box -->
+  <rect x="115" y="125" width="135" height="135" rx="14" fill="#ffffff" stroke="#e5ece2" stroke-width="1" />
+  <text x="130" y="148" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#6b8277" letter-spacing="0.5">KUOTA AUDIT</text>
+  <text x="130" y="172" font-family="sans-serif" font-size="20" font-weight="800" fill="#0a241b">Top 5.0%</text>
+  <text x="130" y="188" font-family="sans-serif" font-size="8" fill="#34483f">K = 25 Klaim Prioritas</text>
+  
+  <rect x="130" y="202" width="105" height="5" rx="2.5" fill="#edf2eb" />
+  <rect x="130" y="202" width="65" height="5" rx="2.5" fill="url(#nordicGrad)" />
+  <text x="130" y="222" font-family="sans-serif" font-size="7.5" font-weight="600" fill="#2e7d63">✓ 95% Fast-Track Lolos</text>
+
+  <!-- Right Side Box (Clinical Feature Distribution) -->
+  <rect x="265" y="125" width="145" height="135" rx="14" fill="#ffffff" stroke="#e5ece2" stroke-width="1" />
+  <text x="280" y="148" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#6b8277" letter-spacing="0.5">DISTRIBUSI RISIKO</text>
+  
+  <!-- Subtle Bar Chart -->
+  <rect x="280" y="205" width="16" height="35" rx="4" fill="#edf2eb" />
+  <rect x="302" y="185" width="16" height="55" rx="4" fill="#edf2eb" />
+  <rect x="324" y="165" width="16" height="75" rx="4" fill="#c26d48" />
+  <rect x="346" y="195" width="16" height="45" rx="4" fill="#edf2eb" />
+  <rect x="368" y="175" width="16" height="65" rx="4" fill="url(#nordicGrad)" />
+
+  <!-- Smooth Curve Line across bars -->
+  <path d="M 288 200 Q 332 145 376 170" fill="none" stroke="#0d3b2e" stroke-width="2.5" stroke-linecap="round" />
+  <circle cx="332" cy="155" r="4.5" fill="#ffffff" stroke="#0d3b2e" stroke-width="2" />
+
+  <!-- Floating Warm Terracotta Badge (Bottom Left) -->
+  <g filter="url(#softNordicShadow)">
+    <rect x="50" y="195" width="105" height="48" rx="12" fill="#ffffff" stroke="#f2cebf" stroke-width="1.2" />
+    <circle cx="70" cy="219" r="8" fill="#fbf1ec" />
+    <circle cx="70" cy="219" r="3.5" fill="#c26d48" />
+    <text x="84" y="215" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#0a241b">Prior Shift</text>
+    <text x="84" y="226" font-family="sans-serif" font-size="7.5" fill="#c26d48">5.0% Baseline</text>
+  </g>
+
+  <!-- Floating Shield Badge (Top Right) -->
+  <g filter="url(#softNordicShadow)">
+    <rect x="360" y="30" width="120" height="50" rx="14" fill="#ffffff" stroke="#b8dcc7" stroke-width="1.2" />
+    <circle cx="382" cy="55" r="12" fill="#eaf4ee" />
+    <path d="M 378 55 L 381 58 L 387 52" fill="none" stroke="#0d3b2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="400" y="52" font-family="sans-serif" font-size="9" font-weight="800" fill="#0d3b2e">NormRecall</text>
+    <text x="400" y="63" font-family="sans-serif" font-size="8" font-weight="700" fill="#2e7d63">0.9800 (@5%)</text>
+  </g>
+</svg>
