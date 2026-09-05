@@ -88,8 +88,20 @@ export default function LiveTriageWorkbench({
       const parsedData = await parseCSVFile(file);
       setActivePreset('custom');
       onDataLoaded(parsedData, file.name);
+      const kQuota = Math.max(1, Math.floor(0.05 * parsedData.length));
+      alert(
+        `✅ BERKAS VALID BERHASIL DIMUAT!\n\n` +
+        `• Nama Berkas: ${file.name}\n` +
+        `• Total Klaim Terbaca: ${parsedData.length.toLocaleString()} klaim\n` +
+        `• Kuota Audit 5% Dialokasikan: ${kQuota.toLocaleString()} klaim prioritas teratas\n\n` +
+        `Tabel triase di bawah telah diperbarui dengan data berkas Anda.`
+      );
     } catch (err) {
       alert(err.message || 'Gagal memproses file CSV.');
+    } finally {
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
     }
   };
 

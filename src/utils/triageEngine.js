@@ -154,7 +154,7 @@ export function processClaimTriage(claims, auditBudgetFraction = 0.05) {
 }
 
 /**
- * Parse uploaded CSV file asynchronously
+ * Parse uploaded CSV file asynchronously with Schema Validation
  */
 export function parseCSVFile(file) {
   return new Promise((resolve, reject) => {
@@ -163,13 +163,38 @@ export function parseCSVFile(file) {
       skipEmptyLines: true,
       dynamicTyping: true,
       complete: (results) => {
-        if (results.data && results.data.length > 0) {
-          resolve(results.data);
-        } else {
-          reject(new Error('File CSV kosong atau format tidak valid.'));
+        if (!results.data || results.data.length === 0) {
+          reject(new Error('Berkas CSV kosong atau format tidak terbaca.'));
+          return;
         }
+
+        const firstRow = results.data[0];
+        const rawKeys = Object.keys(firstRow);
+        const lowerKeys = rawKeys.map(k => String(k).trim().toLowerCase());
+
+        // Validasi Skema: Apakah berkas ini relevan dengan dataset klaim BPJS?
+        const hasClaimId = lowerKeys.some(c => c === 'claim_id' || c.includes('claim'));
+        const hasScore = lowerKeys.some(c => c.includes('prob') || c.includes('score') || c.includes('fraud'));
+        const hasClinicalFeatures = lowerKeys.some(c => 
+          ['los', 'severitylevel', 'kdkc', 'dati2', 'typeppk', 'cmg', 'diagprimer', 'umur'].includes(c)
+        );
+
+        // Jika sama sekali tidak ada kaitan dengan data klaim/scoring BPJS
+        if (!hasClaimId && !hasScore && !hasClinicalFeatures) {
+          reject(new Error(
+            `⚠️ FORMAT BERKAS TIDAK VALID!\n\n` +
+            `Berkas "${file.name}" tidak memuat kolom yang sesuai dengan skema data klaim BPJS Kesehatan.\n\n` +
+            `Kolom yang terdeteksi: [${rawKeys.slice(0, 5).join(', ')}${rawKeys.length > 5 ? '...' : ''}]\n\n` +
+            `Format yang didukung sistem:\n` +
+            `1. Berkas Hasil Scoring Submission (Memuat kolom: 'claim_id', 'fraud_probability')\n` +
+            `2. Berkas Dataset Mentah / Test Set (Memuat kolom: 'claim_id', 'los', 'severitylevel', 'typeppk', dll.)`
+          ));
+          return;
+        }
+
+        resolve(results.data);
       },
-      error: (err) => reject(err)
+      error: (err) => reject(new Error(`Gagal membaca berkas CSV: ${err.message}`))
     });
   });
 }
