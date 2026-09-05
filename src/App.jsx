@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import KPICards from './components/KPICards';
 import EDACanvas from './components/EDACanvas';
+import EvidenceGallery from './components/EvidenceGallery';
 import LiveTriageWorkbench from './components/LiveTriageWorkbench';
 import SensitivityTable from './components/SensitivityTable';
 import FairnessMonitor from './components/FairnessMonitor';
@@ -95,7 +96,7 @@ export default function App() {
 
       {/* Main Landing Page Flow */}
       <main className="landing-container" style={{ flex: 1 }}>
-        {/* Hero Section with Value Proposition & Interactive Card Mockup */}
+        {/* Hero Section with Value Proposition and Interactive Card Mockup */}
         <HeroSection
           onExploreEDA={() => scrollToSection('eda')}
           onOpenSimulator={() => scrollToSection('simulator')}
@@ -111,7 +112,12 @@ export default function App() {
           <EDACanvas />
         </div>
 
-        {/* Section 3: Live 5% Triage Workbench & Sensitivity Table (Task B & C) */}
+        {/* Section 3: Widescreen 16:9 Official Attachment Gallery */}
+        <div id="gallery" style={{ scrollMarginTop: '80px' }}>
+          <EvidenceGallery />
+        </div>
+
+        {/* Section 4: Live 5% Triage Workbench and Sensitivity Table (Task B and C) */}
         <div id="simulator" style={{ scrollMarginTop: '80px' }}>
           <LiveTriageWorkbench
             triageResult={triageResult}
@@ -125,12 +131,12 @@ export default function App() {
           <SensitivityTable />
         </div>
 
-        {/* Section 4: Policyholder Protection & Fairness Center (Task D) */}
+        {/* Section 5: Policyholder Protection and Fairness Center (Task D) */}
         <div id="fairness" style={{ scrollMarginTop: '80px' }}>
           <FairnessMonitor />
         </div>
 
-        {/* Section 5: Operational Decision SOP & Governance (Task E) */}
+        {/* Section 6: Operational Decision SOP and Governance (Task E) */}
         <div id="operational" style={{ scrollMarginTop: '80px' }}>
           <OperationalCenter />
         </div>

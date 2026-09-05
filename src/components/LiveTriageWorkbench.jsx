@@ -90,7 +90,7 @@ export default function LiveTriageWorkbench({
       onDataLoaded(parsedData, file.name);
       const kQuota = Math.max(1, Math.floor(0.05 * parsedData.length));
       alert(
-        `✅ BERKAS VALID BERHASIL DIMUAT!\n\n` +
+        `[KONFIRMASI] Berkas valid berhasil dimuat.\n\n` +
         `• Nama Berkas: ${file.name}\n` +
         `• Total Klaim Terbaca: ${parsedData.length.toLocaleString()} klaim\n` +
         `• Kuota Audit 5% Dialokasikan: ${kQuota.toLocaleString()} klaim prioritas teratas\n\n` +
@@ -111,11 +111,11 @@ export default function LiveTriageWorkbench({
       <div style={{ marginBottom: '1.75rem' }}>
         <div className="section-kicker">
           <span className="accent-bar" />
-          <span>Task B & C • Alokasi Kapasitas Audit 5%</span>
+          <span>Task B dan C: Alokasi Kapasitas Audit 5%</span>
         </div>
-        <h2>Meja Kerja Triase Klaim & Portofolio Audit</h2>
+        <h2>Meja Kerja Triase Klaim dan Portofolio Audit</h2>
         <p style={{ maxWidth: '800px', fontSize: '1rem', color: 'var(--text-body)', marginTop: '0.4rem' }}>
-          Sistem menyortir klaim secara desenden berdasarkan skor risiko terkalibrasi dan mengalokasikan <strong>Top 5% kuota audit ({stats.k} klaim)</strong> untuk verifikasi manual, sedangkan 95% sisa klaim lolos otomatis.
+          Sistem menyortir klaim secara desenden berdasarkan skor risiko terkalibrasi dan mengalokasikan <strong>Top 5% kuota audit ({stats.k} klaim)</strong> untuk verifikasi manual, sedangkan 95% sisa klaim lolos otomatis ke jalur persetujuan cepat (fast-track).
         </p>
       </div>
 
@@ -213,7 +213,7 @@ export default function LiveTriageWorkbench({
               { id: 'ALL', label: 'Semua' },
               { id: 'AUDIT_ONLY', label: `Top 5% Kuota (${stats.k})` },
               { id: 'FAST_TRACK', label: '95% Fast-Track' },
-              { id: 'INCONSISTENT', label: '⚠️ Sinyal Ambigu' },
+              { id: 'INCONSISTENT', label: 'Sinyal Ambigu' },
             ].map((f) => (
               <button
                 key={f.id}
@@ -310,13 +310,13 @@ export default function LiveTriageWorkbench({
                       {/* Faskes */}
                       <td style={{ padding: '0.85rem 1rem' }}>
                         <div style={{ fontWeight: 600, color: 'var(--text-title)' }}>Tipe {claim.typeppk}</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>KC {claim.kdkc} • Dati2 {claim.dati2}</div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>KC {claim.kdkc} : Dati2 {claim.dati2}</div>
                       </td>
 
                       {/* Demografi */}
                       <td style={{ padding: '0.85rem 1rem' }}>
                         <div>{claim.umur} Thn ({claim.jkpst})</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{claim.cmg} • {claim.diagprimer}</div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{claim.cmg} : {claim.diagprimer}</div>
                       </td>
 
                       {/* LOS / Severity */}
@@ -391,9 +391,9 @@ export default function LiveTriageWorkbench({
                           }}
                         >
                           <option value="PENDING">Pilih Aksi...</option>
-                          <option value="APPROVED">✓ Setujui</option>
-                          <option value="HOLD">⏳ Tahan</option>
-                          <option value="REJECTED">✕ Tolak (Fraud)</option>
+                          <option value="APPROVED">Setujui Klaim</option>
+                          <option value="HOLD">Tahan Sementara</option>
+                          <option value="REJECTED">Tolak (Fraud)</option>
                         </select>
                       </td>
                     </tr>
@@ -408,7 +408,7 @@ export default function LiveTriageWorkbench({
                               <span>BATAS ALOKASI AUDIT 5.0% (K = {stats.k} KLAIM TERATAS)</span>
                             </div>
                             <span style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'none' }}>
-                              95% Sisa Klaim di Bawah Garis Ini Lolos Otomatis (Fast-Track) ➔
+                              95% Sisa Klaim di Bawah Garis Ini Lolos Otomatis (Fast-Track)
                             </span>
                           </div>
                         </td>
@@ -435,7 +435,7 @@ export default function LiveTriageWorkbench({
         }}>
           {/* Row Count Info */}
           <div style={{ color: 'var(--text-muted)' }}>
-            Menampilkan <strong>{totalFiltered > 0 ? startIndex + 1 : 0}–{endIndex}</strong> dari <strong>{totalFiltered}</strong> klaim
+            Menampilkan <strong>{totalFiltered > 0 ? startIndex + 1 : 0} - {endIndex}</strong> dari <strong>{totalFiltered}</strong> klaim
             {statusFilter !== 'ALL' && <span style={{ color: 'var(--primary)', marginLeft: '0.4rem' }}>({statusFilter})</span>}
           </div>
 

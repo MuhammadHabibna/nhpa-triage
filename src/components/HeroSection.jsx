@@ -7,23 +7,23 @@ export default function HeroSection({ onExploreEDA, onOpenSimulator }) {
     <section id="hero" className="section-wrapper" style={{ paddingTop: '3rem', paddingBottom: '3.5rem' }}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '3rem', alignItems: 'center' }}>
         
-        {/* Left Column: Clear Headline & Value Proposition */}
+        {/* Left Column: Clear Headline and Value Proposition */}
         <div>
           {/* Editorial Clean Kicker */}
           <div className="section-kicker">
             <span className="accent-bar" />
-            <span>Sistem Triase Risiko & Alokasi Kuota Audit 5% • NHPA BPJS</span>
+            <span>Sistem Triase Risiko dan Alokasi Kuota Audit 5%: NHPA BPJS</span>
           </div>
 
           <h1 style={{ marginBottom: '1.25rem' }}>
-            Sistem Triase Fraud & Alokasi Kuota Audit 5% Berbasis{' '}
+            Sistem Triase Fraud dan Alokasi Kuota Audit 5% Berbasis{' '}
             <span style={{ color: 'var(--primary)' }}>
               Explainable AI
             </span>
           </h1>
 
           <p style={{ fontSize: '1.05rem', color: 'var(--text-body)', lineHeight: 1.7, marginBottom: '2.25rem' }}>
-            Solusi pendukung keputusan komprehensif untuk mendeteksi kecurangan klaim BPJS Kesehatan pada mandat kapasitas audit 5% ($K = \lfloor 0.05 \times N \rfloor$). Menggabungkan rekayasa fitur forensik, kalibrasi probabilitas <i>prior shift</i>, atribusi SHAP, dan proteksi keadilan demografi.
+            Solusi pendukung keputusan medis untuk mendeteksi kecurangan klaim BPJS Kesehatan pada alokasi kuota audit 5% terbatas (K = 8,008 klaim pada data latih 160,174 baris). Mengintegrasikan rekayasa fitur anti-kebocoran, kalibrasi probabilitas isotonik, dekomposisi SHAP tingkat kasus, dan perlindungan keadilan demografi 99.86%.
           </p>
 
           {/* Action CTAs */}
@@ -34,7 +34,7 @@ export default function HeroSection({ onExploreEDA, onOpenSimulator }) {
             </button>
             <button className="btn-outline" onClick={onExploreEDA}>
               <BarChart2 size={16} color="var(--primary)" />
-              <span>Pelajari Bukti EDA (7 Fase)</span>
+              <span>Pelajari Bukti Forensik dan Arsitektur</span>
             </button>
           </div>
 
@@ -51,16 +51,16 @@ export default function HeroSection({ onExploreEDA, onOpenSimulator }) {
 
             <div>
               <div style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary)', fontFamily: 'var(--font-heading)' }}>
-                0.9800
+                0.9655
               </div>
               <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                NormalizedRecall@5%
+                NormalizedRecall@5% (CV)
               </div>
             </div>
 
             <div>
               <div style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--secondary)', fontFamily: 'var(--font-heading)' }}>
-                98.42%
+                99.86%
               </div>
               <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
                 Proteksi Keadilan Peserta

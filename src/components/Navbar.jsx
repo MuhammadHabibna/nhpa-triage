@@ -5,7 +5,8 @@ export default function Navbar({ activeSection, onNavigate }) {
   const links = [
     { id: 'hero', label: 'Beranda' },
     { id: 'kpi', label: 'Metrik Utama' },
-    { id: 'eda', label: 'Bukti EDA (7 Fase)' },
+    { id: 'eda', label: 'Bukti Forensik' },
+    { id: 'gallery', label: 'Galeri Lampiran 16:9' },
     { id: 'simulator', label: 'Live Triage 5%' },
     { id: 'fairness', label: 'Fairness & Proteksi' },
     { id: 'operational', label: 'SOP Tata Kelola' },
@@ -37,7 +38,7 @@ export default function Navbar({ activeSection, onNavigate }) {
                 NHPA Triage
               </span>
               <span style={{ fontSize: '0.68rem', color: 'var(--primary)', fontWeight: 700 }}>
-                • DAC PRS 2026
+                : DAC PRS 2026
               </span>
             </div>
             <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontWeight: 500 }}>

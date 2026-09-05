@@ -31,16 +31,16 @@ export default function Footer() {
         </div>
 
         <p style={{ maxWidth: '640px', margin: '0 auto 1.25rem auto', color: 'var(--text-body)', lineHeight: 1.6 }}>
-          Sistem Pendukung Keputusan Triase Risiko Klaim Kesehatan & Alokasi Kuota Audit 5% • Dikembangkan untuk Data Analytics Competition (DAC) PRS ITS 2026.
+          Sistem Pendukung Keputusan Triase Risiko Klaim Kesehatan dan Alokasi Kuota Audit 5%: Dikembangkan untuk Data Analytics Competition (DAC) PRS ITS 2026.
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', fontSize: '0.8rem', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
-          <span>Ensemble Trio (CatBoost / LGB / XGB)</span>
-          <span>•</span>
-          <span>NormalizedRecall@5%: 0.9800</span>
-          <span>•</span>
-          <span>Bayes Prior Calibration: 5.00%</span>
-          <span>•</span>
+          <span>Ensemble Trio (50% LGB + 30% XGB + 20% CatBoost)</span>
+          <span>:</span>
+          <span>NormalizedRecall@5%: 0.9655</span>
+          <span>:</span>
+          <span>Proteksi Keadilan: 99.86%</span>
+          <span>:</span>
           <span>Zero-Leakage 5-Fold Stratified</span>
         </div>
       </div>

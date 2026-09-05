@@ -1,29 +1,29 @@
 import React from 'react';
-import { BookOpen, UserCheck, RefreshCw, AlertOctagon, Scale, Layers } from 'lucide-react';
+import { UserCheck, RefreshCw, AlertOctagon, Scale, Layers } from 'lucide-react';
 
 export default function OperationalCenter() {
   const workflows = [
     {
       step: '01',
-      title: 'Triase & Penskoran Risiko Otomatis',
+      title: 'Triase dan Penskoran Risiko Otomatis',
       icon: Layers,
-      desc: 'Klaim masuk diproses lewat feature extraction anti-bocor, diskor oleh ensemble trio (CatBoost/LGB/XGB), dan dikalibrasi ke prevalensi operasional 5.0%.'
+      desc: 'Klaim masuk diproses lewat feature extraction anti-kebocoran, diskor oleh ensemble trio (CatBoost/LGB/XGB), dan dikalibrasi ke prevalensi operasional 5.0%.'
     },
     {
       step: '02',
       title: 'Demarkasi Kuota Alokasi 5%',
       icon: Scale,
-      desc: 'Top 5% klaim berisiko tertinggi dialokasikan ke portofolio audit manual. Sisa 95% klaim langsung lolos ke persetujuan instan (fast-track).'
+      desc: 'Top 5% klaim berisiko tertinggi dialokasikan ke portofolio audit manual (K = 8,008 klaim pada data latih). Sisa 95% klaim langsung lolos ke persetujuan cepat (fast-track).'
     },
     {
       step: '03',
       title: 'Verifikasi Human-in-the-Loop',
       icon: UserCheck,
-      desc: 'Dokter verifikator memeriksa rekam medis fisik dipandu 3 faktor pemicu SHAP dan lencana peringatan tanda tangan ambigu.'
+      desc: 'Dokter verifikator memeriksa rekam medis fisik dipandu dekomposisi nilai SHAP lokal dan lencana peringatan tanda tangan klaim ambigu.'
     },
     {
       step: '04',
-      title: 'Resolusi, Sanggahan, & Retraining',
+      title: 'Resolusi, Sanggahan, dan Retraining',
       icon: RefreshCw,
       desc: 'Keputusan verifikator dicatat dalam audit ledger. Jika Population Stability Index (PSI) > 0.10, sistem memicu kalibrasi ulang atau retraining model.'
     },
@@ -34,11 +34,11 @@ export default function OperationalCenter() {
       <div style={{ marginBottom: '2rem' }}>
         <div className="section-kicker">
           <span className="accent-bar" />
-          <span>Task E • Operational Decision Process & Governance</span>
+          <span>Task E: Operational Decision Process and Governance</span>
         </div>
-        <h2>Kerangka Keputusan Operasional & Tata Kelola SOP</h2>
+        <h2>Kerangka Keputusan Operasional dan Tata Kelola SOP</h2>
         <p style={{ maxWidth: '800px', fontSize: '1rem', color: 'var(--text-body)', marginTop: '0.4rem' }}>
-          Sistem triase ini beroperasi sebagai instrumen pendukung keputusan medis (*decision support*), bukan pemutus vonis klaim otonom pengganti manusia.
+          Sistem triase ini beroperasi sebagai instrumen pendukung keputusan medis (decision support), bukan pemutus vonis klaim otonom pengganti manusia.
         </p>
       </div>
 
@@ -89,7 +89,7 @@ export default function OperationalCenter() {
       <div className="white-card" style={{ padding: '2rem', border: '1px solid #cbd5e1', borderRadius: '12px' }}>
         <h3 style={{ fontSize: '1.15rem', color: 'var(--text-title)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <AlertOctagon size={20} color="var(--warning)" />
-          <span>Protokol Tata Kelola & Retraining Model (Governance Guardrails)</span>
+          <span>Protokol Tata Kelola dan Retraining Model (Governance Guardrails)</span>
         </h3>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
@@ -107,7 +107,7 @@ export default function OperationalCenter() {
               2. Deteksi Pergeseran Pola (Drift Monitoring)
             </h4>
             <p style={{ fontSize: '0.825rem', color: 'var(--text-body)' }}>
-              Pemantauan Population Stability Index (PSI) bulanan pada fitur kunci untuk mendeteksi perubahan modus fraud baru.
+              Pemantauan Population Stability Index (PSI) bulanan pada fitur kunci untuk mendeteksi perubahan modus kecurangan baru.
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export default function OperationalCenter() {
               3. Mekanisme Banding Faskes (Appeals)
             </h4>
             <p style={{ fontSize: '0.825rem', color: 'var(--text-body)' }}>
-              Faskes yang klaimnya ditolak mendapatkan transparansi alasan penolakan dan hak sanggah dalam 14 hari kerja.
+              Fasilitas kesehatan yang klaimnya ditolak mendapatkan transparansi alasan penolakan dan hak sanggah dalam 14 hari kerja.
             </p>
           </div>
         </div>
